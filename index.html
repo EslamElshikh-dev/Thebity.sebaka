@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="ar" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="description" content="مؤسسة وليد سعود الثبيتي للتجارة - متجر متخصص في بيع وتوفير أفضل مستلزمات وأدوات السباكة والكهرباء ومواد البناء بأعلى معايير الجودة وبأسعار تنافسية.">
+    <meta name="keywords" content="مواد بناء, أدوات سباكة, مستلزمات كهرباء, كابلات, إضاءة, أطقم حمامات, وليد الثبيتي, تجارة مواد البناء">
+    <meta property="og:title" content="مؤسسة وليد سعود الثبيتي للتجارة للسباكة والكهرباء">
+    <meta property="og:description" content="وجهتك الأولى لأفضل أدوات السباكة، الكهرباء، ومواد البناء.">
+    <meta property="og:image" content="https://i.ibb.co/DgwdBnF9/20260411-211545.png">
+    
+    <title class="ar">مؤسسة وليد سعود الثبيتي للتجارة</title>
+    <title class="en" style="display:none;">Waleed Saud Al-Thubaiti Trading Est.</title>
+    <title class="ur" style="display:none;">ولید سعود الثبیتی ٹریڈنگ اسٹیبلشمنٹ</title>
+    
+    <link rel="icon" href="https://i.ibb.co/DgwdBnF9/20260411-211545.png" type="image/png">
+
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        /* المتغيرات الأساسية للوضع النهاري (ألوان تناسب التجارة والمقاولات) */
+        :root {
+            --bg-color: #f8fafc;
+            --text-color: #1e293b;
+            --primary-color: #2563eb; /* أزرق صناعي متطور */
+            --primary-dark: #1d4ed8;
+            --card-bg: #ffffff;
+            --header-bg: rgba(255, 255, 255, 0.95);
+            --border-color: #e2e8f0;
+            --shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+            --hover-shadow: 0 10px 25px rgba(37, 99, 235, 0.15);
+            --map-filter: none;
+        }
+
+        /* المتغيرات للوضع الليلي */
+        [data-theme="dark"] {
+            --bg-color: #0f172a;
+            --text-color: #f1f5f9;
+            --primary-color: #3b82f6;
+            --primary-dark: #2563eb;
+            --card-bg: #1e293b;
+            --header-bg: rgba(15, 23, 42, 0.95);
+            --border-color: #334155;
+            --shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+            --hover-shadow: 0 10px 25px rgba(59, 130, 246, 0.2);
+            --map-filter: invert(90%) hue-rotate(180deg) brightness(80%) contrast(120%);
+        }
+
+        /* الأساسيات والخطوط المُصغرة والمنسقة */
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Cairo', sans-serif; transition: background-color 0.3s, color 0.3s, border-color 0.3s; }
+        body { background-color: var(--bg-color); color: var(--text-color); overflow-x: hidden; line-height: 1.6; font-size: 15px; }
+        a { text-decoration: none; color: inherit; }
+        ul { list-style: none; }
+
+        html[lang="ar"], html[lang="ur"] { direction: rtl; }
+        html[lang="en"] { direction: ltr; }
+
+        html[lang="ar"] .en, html[lang="ar"] .ur { display: none !important; }
+        html[lang="en"] .ar, html[lang="en"] .ur { display: none !important; }
+        html[lang="ur"] .ar, html[lang="ur"] .en { display: none !important; }
+
+        /* شاشة التحميل */
+        #loader {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: var(--bg-color); z-index: 9999;
+            display: flex; flex-direction: column; justify-content: center; align-items: center;
+        }
+        .loader-ring {
+            width: 90px; height: 90px; border-radius: 50%;
+            border: 3px solid transparent; border-top-color: var(--primary-color);
+            animation: spin 1s linear infinite; position: relative;
+            display: flex; justify-content: center; align-items: center;
+        }
+        .loader-ring img { width: 55px; height: 55px; border-radius: 50%; animation: spin-reverse 1s linear infinite; object-fit: contain; }
+        .loader-text { margin-top: 15px; font-size: 0.95rem; font-weight: 700; color: var(--primary-color); letter-spacing: 0.5px; }
+        .dots::after { content: ''; animation: dots 1.5s steps(4, end) infinite; }
+
+        /* الهيدر */
+        header {
+            position: fixed; top: 0; width: 100%; padding: 12px 5%;
+            background: var(--header-bg); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+            display: flex; justify-content: space-between; align-items: center;
+            z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.05); border-bottom: 1px solid var(--border-color);
+        }
+        .logo { display: flex; align-items: center; gap: 10px; font-weight: 800; font-size: 1.1rem; color: var(--primary-color); }
+        .logo img { width: 38px; border-radius: 8px; }
+        .header-actions { display: flex; gap: 8px; align-items: center; }
+        .action-btn { background: var(--card-bg); border: 1px solid var(--border-color); color: var(--text-color); width: 36px; height: 36px; border-radius: 8px; display: flex; justify-content: center; align-items: center; cursor: pointer; font-size: 1rem; }
+        .action-btn:hover { background: var(--primary-color); color: white; border-color: var(--primary-color); }
+
+        /* القائمة الجانبية */
+        .sidebar {
+            position: fixed; top: 0; width: 270px; height: 100vh; background: var(--card-bg);
+            z-index: 1001; padding: 25px; box-shadow: var(--shadow); transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1); border-left: 1px solid var(--border-color);
+        }
+        html[lang="ar"] .sidebar, html[lang="ur"] .sidebar { right: -300px; }
+        html[lang="ar"] .sidebar.active, html[lang="ur"] .sidebar.active { right: 0; }
+        html[lang="en"] .sidebar { left: -300px; border-left: none; border-right: 1px solid var(--border-color); }
+        html[lang="en"] .sidebar.active { left: 0; }
+        
+        .sidebar-close { font-size: 1.2rem; cursor: pointer; margin-bottom: 25px; display: block; color: var(--text-color); }
+        .sidebar ul li { margin-bottom: 12px; }
+        .sidebar ul li a { font-size: 0.95rem; font-weight: 700; display: block; padding: 10px 12px; border-radius: 8px; transition: 0.2s; }
+        .sidebar ul li a:hover { background: rgba(37, 99, 235, 0.1); color: var(--primary-color); padding-inline-start: 18px; }
+        .overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(15, 23, 42, 0.6); backdrop-filter: blur(3px); z-index: 1000; display: none; }
+
+        /* قسم البداية Hero */
+        .hero {
+            padding: 140px 5% 90px; text-align: center;
+            background: radial-gradient(circle at top, var(--card-bg) 0%, var(--bg-color) 100%);
+            position: relative; overflow: hidden;
+        }
+        .hero::before {
+            content: ''; position: absolute; top: -50px; left: -50px; width: 200px; height: 200px;
+            background: var(--primary-color); filter: blur(100px); opacity: 0.1; z-index: 0;
+        }
+        .hero-content { position: relative; z-index: 1; }
+        .hero h1 { font-size: 2rem; font-weight: 800; color: var(--text-color); margin-bottom: 15px; line-height: 1.5; }
+        .hero h1 span { color: var(--primary-color); }
+        .hero p { font-size: 0.95rem; font-weight: 600; max-width: 600px; margin: 0 auto 30px; color: var(--text-color); opacity: 0.75; }
+        .btn-primary {
+            display: inline-flex; align-items: center; gap: 10px; padding: 12px 30px; background: var(--primary-color); color: white !important;
+            border-radius: 8px; font-weight: 700; font-size: 0.95rem; box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3); transition: 0.3s;
+        }
+        .btn-primary:hover { background: var(--primary-dark); transform: translateY(-3px); box-shadow: 0 6px 20px rgba(37, 99, 235, 0.4); }
+
+        /* الأقسام العامة */
+        .section-title { text-align: center; font-size: 1.6rem; font-weight: 800; margin-bottom: 40px; color: var(--text-color); }
+        .section-title span.highlight { color: var(--primary-color); }
+        section { padding: 70px 5%; position: relative; }
+
+        /* المزايا */
+        .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; }
+        .feature-card {
+            background: var(--card-bg); padding: 25px 20px; border-radius: 12px; text-align: center;
+            box-shadow: var(--shadow); border: 1px solid var(--border-color); transition: 0.3s;
+        }
+        .feature-card:hover { transform: translateY(-5px); border-color: var(--primary-color); }
+        .feature-icon {
+            width: 55px; height: 55px; margin: 0 auto 15px; background: rgba(37, 99, 235, 0.1);
+            border-radius: 12px; display: flex; justify-content: center; align-items: center;
+            font-size: 1.4rem; color: var(--primary-color); transition: 0.3s;
+        }
+        .feature-card:hover .feature-icon { background: var(--primary-color); color: white; transform: scale(1.1) rotate(5deg); }
+        .feature-card h3 { margin-bottom: 10px; font-size: 1rem; font-weight: 800; }
+        .feature-card p { font-size: 0.85rem; opacity: 0.7; font-weight: 500; }
+
+        /* المنتجات / الخدمات */
+        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; }
+        .service-card {
+            background: var(--card-bg); border-radius: 12px; padding: 25px;
+            box-shadow: var(--shadow); border: 1px solid var(--border-color); transition: 0.3s;
+            display: flex; flex-direction: column; justify-content: space-between;
+        }
+        .service-card:hover { transform: translateY(-5px); box-shadow: var(--hover-shadow); }
+        .service-icon-3d {
+            width: 50px; height: 50px; background: var(--bg-color); border-radius: 10px;
+            display: flex; justify-content: center; align-items: center; font-size: 1.3rem; color: var(--primary-color);
+            border: 1px solid var(--border-color); margin-bottom: 15px;
+        }
+        .service-card h3 { font-size: 1.1rem; font-weight: 800; margin-bottom: 10px; }
+        .service-card p { font-size: 0.85rem; opacity: 0.75; font-weight: 600; margin-bottom: 20px; flex-grow: 1; }
+        .btn-order {
+            display: block; text-align: center; padding: 10px; background: rgba(37, 99, 235, 0.1);
+            color: var(--primary-color) !important; border-radius: 6px; font-weight: 800; font-size: 0.85rem; transition: 0.3s;
+        }
+        .btn-order:hover { background: var(--primary-color); color: white !important; }
+
+        /* تواصل معنا والخريطة */
+        .contact-container { position: relative; border-radius: 12px; overflow: hidden; box-shadow: var(--shadow); border: 1px solid var(--border-color); }
+        .contact-container iframe { width: 100%; height: 400px; border: none; filter: var(--map-filter); display: block; }
+        
+        .contact-info {
+            position: absolute; bottom: 20px; right: 20px; background: var(--card-bg);
+            padding: 20px; border-radius: 10px; box-shadow: var(--shadow); border: 1px solid var(--border-color);
+            max-width: 90%; min-width: 280px;
+            html[lang="en"] & { right: auto; left: 20px; }
+        }
+        .contact-info h3 { font-size: 1rem; font-weight: 800; color: var(--text-color); margin-bottom: 15px; border-bottom: 2px solid var(--primary-color); padding-bottom: 8px; display: inline-block; }
+        .contact-info p { font-size: 0.85rem; margin-bottom: 10px; font-weight: 700; display: flex; align-items: center; gap: 10px; }
+        .contact-info i { color: var(--primary-color); font-size: 1rem; width: 20px; text-align: center; background: rgba(37, 99, 235, 0.1); padding: 6px; border-radius: 6px; }
+
+        /* الفوتر */
+        footer { background: var(--card-bg); padding: 30px 5% 90px; text-align: center; border-top: 1px solid var(--border-color); font-size: 0.85rem; font-weight: 700; }
+        .designer-badge {
+            display: inline-block; margin-top: 15px; padding: 8px 15px; background: var(--bg-color);
+            border: 1px solid var(--border-color); border-radius: 6px; font-size: 0.75rem; font-weight: 800;
+            color: var(--text-color); transition: 0.3s;
+        }
+        .designer-badge:hover { border-color: var(--primary-color); color: var(--primary-color); }
+
+        /* الأزرار العائمة */
+        .floating-actions { position: fixed; bottom: 85px; right: 15px; display: flex; flex-direction: column; gap: 10px; z-index: 999; }
+        html[lang="en"] .floating-actions { right: auto; left: 15px; }
+        .float-btn {
+            width: 45px; height: 45px; border-radius: 12px; display: flex; justify-content: center; align-items: center;
+            font-size: 1.4rem; color: white; box-shadow: 0 4px 10px rgba(0,0,0,0.15); animation: pulse 2s infinite; transition: 0.3s;
+        }
+        .float-btn:hover { transform: scale(1.1); animation: none; }
+        .float-wa { background: #10b981; } /* أخضر واتساب هادئ */
+        .float-call { background: var(--primary-color); }
+
+        /* بار التنقل السفلي */
+        .bottom-nav {
+            position: fixed; bottom: 0; left: 0; width: 100%; background: var(--header-bg); backdrop-filter: blur(10px);
+            display: flex; justify-content: space-around; padding: 10px 0;
+            box-shadow: 0 -2px 10px rgba(0,0,0,0.05); z-index: 1000; border-top: 1px solid var(--border-color);
+        }
+        .bottom-nav a { display: flex; flex-direction: column; align-items: center; font-size: 0.7rem; font-weight: 800; color: var(--text-color); gap: 5px; opacity: 0.6; transition: 0.3s; }
+        .bottom-nav a.active, .bottom-nav a:hover { opacity: 1; color: var(--primary-color); transform: translateY(-2px); }
+        .bottom-nav a i { font-size: 1.1rem; }
+        
+        @media (min-width: 769px) { .bottom-nav { display: none; } footer { padding-bottom: 30px; } .floating-actions{ bottom: 20px; } }
+
+        /* الرسوم المتحركة */
+        @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+        @keyframes spin-reverse { 0% { transform: rotate(360deg); } 100% { transform: rotate(0deg); } }
+        @keyframes dots { 0% { content: ''; } 25% { content: '.'; } 50% { content: '..'; } 75% { content: '...'; } }
+        @keyframes pulse { 0% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.5); } 70% { box-shadow: 0 0 0 10px rgba(16, 185, 129, 0); } 100% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); } }
+        .float-call { animation: pulseCall 2s infinite; }
+        @keyframes pulseCall { 0% { box-shadow: 0 0 0 0 rgba(37, 99, 235, 0.5); } 70% { box-shadow: 0 0 0 10px rgba(37, 99, 235, 0); } 100% { box-shadow: 0 0 0 0 rgba(37, 99, 235, 0); } }
+
+    </style>
+</head>
+<body>
+
+    <div id="loader">
+        <div class="loader-ring">
+            <img src="https://i.ibb.co/DgwdBnF9/20260411-211545.png" alt="Logo">
+        </div>
+        <div class="loader-text">
+            <span class="ar">جاري تجهيز المتجر<span class="dots"></span></span>
+            <span class="en">Loading Store<span class="dots"></span></span>
+            <span class="ur">اسٹور لوڈ ہو رہا ہے<span class="dots"></span></span>
+        </div>
+    </div>
+
+    <header>
+        <div class="logo">
+            <img src="https://i.ibb.co/DgwdBnF9/20260411-211545.png" alt="Logo">
+            <span class="ar">وليد الثبيتي للتجارة</span>
+            <span class="en">Al-Thubaiti Trading</span>
+            <span class="ur">الثبیتی ٹریڈنگ</span>
+        </div>
+        <div class="header-actions">
+            <div class="action-btn" id="lang-toggle" title="تغيير اللغة"><i class="fa-solid fa-language"></i></div>
+            <div class="action-btn" id="theme-toggle" title="تغيير المظهر"><i class="fa-solid fa-moon"></i></div>
+            <div class="action-btn" id="menu-toggle"><i class="fa-solid fa-bars-staggered"></i></div>
+        </div>
+    </header>
+
+    <div class="overlay" id="overlay"></div>
+    <div class="sidebar" id="sidebar">
+        <i class="fa-solid fa-xmark sidebar-close" id="close-sidebar"></i>
+        <ul>
+            <li><a href="#hero" class="close-on-click"><span class="ar"><i class="fa-solid fa-shop"></i> الرئيسية</span><span class="en"><i class="fa-solid fa-shop"></i> Home</span><span class="ur"><i class="fa-solid fa-shop"></i> ہوم</span></a></li>
+            <li><a href="#about" class="close-on-click"><span class="ar"><i class="fa-solid fa-shield-halved"></i> لماذا نحن</span><span class="en"><i class="fa-solid fa-shield-halved"></i> Why Us</span><span class="ur"><i class="fa-solid fa-shield-halved"></i> ہم کیوں</span></a></li>
+            <li><a href="#products" class="close-on-click"><span class="ar"><i class="fa-solid fa-boxes-stacked"></i> الأقسام والمنتجات</span><span class="en"><i class="fa-solid fa-boxes-stacked"></i> Products</span><span class="ur"><i class="fa-solid fa-boxes-stacked"></i> مصنوعات</span></a></li>
+            <li><a href="#contact" class="close-on-click"><span class="ar"><i class="fa-solid fa-location-dot"></i> موقع المتجر</span><span class="en"><i class="fa-solid fa-location-dot"></i> Store Location</span><span class="ur"><i class="fa-solid fa-location-dot"></i> اسٹور کا مقام</span></a></li>
+        </ul>
+    </div>
+
+    <section id="hero" class="hero">
+        <div class="hero-content">
+            <h1 class="ar">أفضل مستلزمات <span>السباكة والكهرباء</span> ومواد البناء</h1>
+            <h1 class="en">Premium <span>Plumbing, Electrical</span> & Building Materials</h1>
+            <h1 class="ur">پریمیم <span>پلمبنگ، الیکٹریکل</span> اور تعمیراتی مواد</h1>
+            
+            <p class="ar">وجهتك الأولى والموثوقة لتأسيس وتشطيب مشروعك. نوفر لك تشكيلة واسعة من أجود الماركات العالمية والمحلية بأسعار تنافسية تلبي كافة احتياجاتك المعمارية.</p>
+            <p class="en">Your trusted destination for finishing your project. We offer a wide range of top global and local brands at competitive prices for all your architectural needs.</p>
+            <p class="ur">آپ کے پروجیکٹ کی تکمیل کے لیے آپ کی قابل اعتماد منزل۔ ہم تمام تعمیراتی ضروریات کے لیے مسابقتی قیمتوں پر بہترین برانڈز فراہم کرتے ہیں۔</p>
+
+            <a href="https://wa.me/966551057821" class="btn-primary">
+                <i class="fa-brands fa-whatsapp"></i>
+                <span class="ar">تواصل مع المبيعات</span><span class="en">Contact Sales</span><span class="ur">سیلز سے رابطہ کریں</span>
+            </a>
+        </div>
+    </section>
+
+    <section id="about">
+        <h2 class="section-title"><span class="ar">لماذا تختار <span class="highlight">متجرنا؟</span></span><span class="en">Why Choose <span class="highlight">Us?</span></span><span class="ur">ہمیں کیوں <span class="highlight">منتخب کریں؟</span></span></h2>
+        <div class="features-grid">
+            <div class="feature-card"><div class="feature-icon"><i class="fa-solid fa-medal"></i></div>
+                <h3 class="ar">جودة أصلية ومضمونة</h3><h3 class="en">Guaranteed Quality</h3><h3 class="ur">تضمین شدہ معیار</h3>
+                <p class="ar">نوفر منتجات أصلية 100% من وكلاء معتمدين لضمان الأمان والعمر الطويل.</p>
+                <p class="en">We provide 100% authentic products from authorized dealers for safety and longevity.</p>
+                <p class="ur">ہم حفاظت اور طویل عمری کے لیے مجاز ڈیلرز سے 100% مستند مصنوعات فراہم کرتے ہیں۔</p>
+            </div>
+            <div class="feature-card"><div class="feature-icon"><i class="fa-solid fa-tags"></i></div>
+                <h3 class="ar">أسعار تنافسية للجملة والقطاعي</h3><h3 class="en">Competitive Pricing</h3><h3 class="ur">مسابقتی قیمتیں</h3>
+                <p class="ar">نقدم عروضاً وأسعاراً خاصة للمقاولين وأصحاب المشاريع والكميات.</p>
+                <p class="en">We offer special discounts and rates for contractors and bulk project orders.</p>
+                <p class="ur">ہم ٹھیکیداروں اور بلک پروجیکٹ کے آرڈرز کے لیے خصوصی چھوٹ پیش کرتے ہیں۔</p>
+            </div>
+            <div class="feature-card"><div class="feature-icon"><i class="fa-solid fa-layer-group"></i></div>
+                <h3 class="ar">تنوع شامل ومتكامل</h3><h3 class="en">Comprehensive Variety</h3><h3 class="ur">جامع ورائٹی</h3>
+                <p class="ar">كل ما تحتاجه تحت سقف واحد، من مواد العظم وحتى التشطيبات النهائية.</p>
+                <p class="en">Everything you need under one roof, from foundation materials to final finishes.</p>
+                <p class="ur">بنیادی مواد سے لے کر حتمی تکمیل تک آپ کی ضرورت کی ہر چیز ایک ہی چھت کے نیچے۔</p>
+            </div>
+            <div class="feature-card"><div class="feature-icon"><i class="fa-solid fa-user-tie"></i></div>
+                <h3 class="ar">استشارات فنية متخصصة</h3><h3 class="en">Expert Consultations</h3><h3 class="ur">ماہرین کی مشاورت</h3>
+                <p class="ar">فريق مبيعات ذو خبرة لمساعدتك في اختيار المواد الأنسب لمشروعك.</p>
+                <p class="en">An experienced sales team to help you select the best materials for your project.</p>
+                <p class="ur">ایک تجربہ کار سیلز ٹیم جو آپ کے پروجیکٹ کے لیے بہترین مواد منتخب کرنے میں مدد کرتی ہے۔</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="products">
+        <h2 class="section-title"><span class="ar">أقسام <span class="highlight">المنتجات</span></span><span class="en">Product <span class="highlight">Categories</span></span><span class="ur">پروڈکٹ <span class="highlight">کیٹیگریز</span></span></h2>
+        <div class="services-grid">
+            
+            <div class="service-card">
+                <div class="service-icon-3d"><i class="fa-solid fa-plug"></i></div>
+                <h3 class="ar">أدوات وكابلات كهربائية</h3><h3 class="en">Electrical Supplies & Cables</h3><h3 class="ur">الیکٹریکل سپلائیز اور کیبلز</h3>
+                <p class="ar">أسلاك، كابلات ضغط عالي ومنخفض، طبالين ولوحات توزيع، وقواطع كهربائية من أفضل المصانع المطابقة لمواصفات الجودة لضمان أمان منزلك.</p>
+                <p class="en">Wires, distribution boards, and breakers from top manufacturers meeting quality standards.</p>
+                <p class="ur">آپ کے گھر کی حفاظت کو یقینی بنانے کے لیے اعلیٰ مینوفیکچررز کے تار اور بریکر۔</p>
+                <a href="https://wa.me/966551057821?text=أستفسر عن قسم الكهرباء والكابلات" class="btn-order"><span class="ar">استفسر عن الأسعار</span><span class="en">Inquire Prices</span><span class="ur">قیمتیں دریافت کریں</span></a>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon-3d"><i class="fa-solid fa-faucet-drip"></i></div>
+                <h3 class="ar">مستلزمات وأنابيب السباكة</h3><h3 class="en">Plumbing Supplies & Pipes</h3><h3 class="ur">پلمبنگ اور پائپ</h3>
+                <p class="ar">أنابيب حرارية وبي في سي، قطع غيار، محابس، ومضخات مياه عالية الكفاءة لتأسيس شبكات مياه متينة ومقاومة للتسريب والصداء.</p>
+                <p class="en">Thermal/PVC pipes, valves, and water pumps to establish durable, leak-proof water networks.</p>
+                <p class="ur">پائیدار، رساو پروف پانی کے نیٹ ورک قائم کرنے کے لیے تھرمل پائپ اور والوز۔</p>
+                <a href="https://wa.me/966551057821?text=أستفسر عن قسم السباكة والأنابيب" class="btn-order"><span class="ar">استفسر عن الأسعار</span><span class="en">Inquire Prices</span><span class="ur">قیمتیں دریافت کریں</span></a>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon-3d"><i class="fa-solid fa-lightbulb"></i></div>
+                <h3 class="ar">حلول الإضاءة والإنارة</h3><h3 class="en">Lighting Solutions</h3><h3 class="ur">لائٹنگ سلوشنز</h3>
+                <p class="ar">تشكيلة واسعة من إضاءات LED الموفرة للطاقة، كشافات خارجية، سبوت لايت، ثريات، ومفاتيح وأفياش بتصاميم عصرية تناسب كل الأذواق.</p>
+                <p class="en">Wide range of LED lights, outdoor floodlights, spotlights, and modern switch sockets.</p>
+                <p class="ur">توانائی بچانے والی ایل ای ڈی لائٹس، آؤٹ ڈور لائٹس اور جدید سوئچز کی وسیع رینج۔</p>
+                <a href="https://wa.me/966551057821?text=أستفسر عن قسم الإضاءة والإنارة" class="btn-order"><span class="ar">استفسر عن الأسعار</span><span class="en">Inquire Prices</span><span class="ur">قیمتیں دریافت کریں</span></a>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon-3d"><i class="fa-solid fa-bath"></i></div>
+                <h3 class="ar">أطقم حمامات وأدوات صحية</h3><h3 class="en">Sanitary Ware</h3><h3 class="ur">سینیٹری کا سامان</h3>
+                <p class="ar">أطقم حمامات متكاملة، خلاطات مياه فاخرة، شطافات، سخانات، وإكسسوارات صحية تجمع بين الجودة العالية والتصميم الأنيق.</p>
+                <p class="en">Complete bathroom sets, luxury mixers, heaters, and accessories combining quality and design.</p>
+                <p class="ur">باتھ روم کے مکمل سیٹ، لگژری مکسر، ہیٹر اور لوازمات۔</p>
+                <a href="https://wa.me/966551057821?text=أستفسر عن قسم الأدوات الصحية" class="btn-order"><span class="ar">استفسر عن الأسعار</span><span class="en">Inquire Prices</span><span class="ur">قیمتیں دریافت کریں</span></a>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon-3d"><i class="fa-solid fa-trowel-bricks"></i></div>
+                <h3 class="ar">مواد البناء المتنوعة</h3><h3 class="en">Building Materials</h3><h3 class="ur">تعمیراتی مواد</h3>
+                <p class="ar">أسمنت، جبس، عوازل حرارية ومائية، مواد لاصقة، غراء بلاط، وروبة ترويبة من أفضل الشركات لضمان أساسات صلبة وتشطيبات مثالية.</p>
+                <p class="en">Cement, gypsum, insulators, and tile adhesives for solid foundations and perfect finishes.</p>
+                <p class="ur">مضبوط بنیادوں اور کامل تکمیل کے لیے سیمنٹ، جپسم، اور ٹائل چپکنے والی چیزیں۔</p>
+                <a href="https://wa.me/966551057821?text=أستفسر عن قسم مواد البناء" class="btn-order"><span class="ar">استفسر عن الأسعار</span><span class="en">Inquire Prices</span><span class="ur">قیمتیں دریافت کریں</span></a>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon-3d"><i class="fa-solid fa-hammer"></i></div>
+                <h3 class="ar">عدد وأدوات (يدوية وكهربائية)</h3><h3 class="en">Hand & Power Tools</h3><h3 class="ur">ہینڈ اور پاور ٹولز</h3>
+                <p class="ar">دريلات، صواريخ قص، مفكات، وأدوات قياس احترافية تناسب المقاولين والفنيين، بالإضافة لعدد الصيانة المنزلية.</p>
+                <p class="en">Drills, grinders, screwdrivers, and professional measuring tools for contractors and DIY.</p>
+                <p class="ur">ٹھیکیداروں اور تکنیکی ماہرین کے لیے پیشہ ورانہ ٹولز اور ڈرل مشینیں۔</p>
+                <a href="https://wa.me/966551057821?text=أستفسر عن قسم العدد والأدوات" class="btn-order"><span class="ar">استفسر عن الأسعار</span><span class="en">Inquire Prices</span><span class="ur">قیمتیں دریافت کریں</span></a>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2 class="section-title"><span class="ar">موقع <span class="highlight">المتجر</span> والتواصل</span><span class="en">Store <span class="highlight">Location</span> & Contact</span><span class="ur">اسٹور کا <span class="highlight">مقام</span> اور رابطہ</span></h2>
+        <div class="contact-container">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d14498.412450873686!2d46.738586!3d24.7135517!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2ssa!4v1700000000000!5m2!1sen!2ssa" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            
+            <div class="contact-info">
+                <h3 class="ar">معلومات المتجر</h3>
+                <h3 class="en">Store Info</h3>
+                <h3 class="ur">اسٹور کی معلومات</h3>
+                
+                <p><i class="fa-brands fa-whatsapp"></i> <a href="https://wa.me/966551057821" dir="ltr">0551057821</a></p>
+                <p><i class="fa-solid fa-phone"></i> <a href="tel:0551057821" dir="ltr">0551057821</a></p>
+                <p><i class="fa-solid fa-shop"></i> <span class="ar">متجر بيع بالتجزئة والجملة</span><span class="en">Retail & Wholesale Store</span><span class="ur">خوردہ اور ہول سیل اسٹور</span></p>
+            </div>
+        </div>
+    </section>
+
+    <div class="floating-actions">
+        <a href="https://wa.me/966551057821" class="float-btn float-wa" target="_blank" title="واتساب"><i class="fa-brands fa-whatsapp"></i></a>
+        <a href="tel:0551057821" class="float-btn float-call" title="اتصال"><i class="fa-solid fa-phone"></i></a>
+    </div>
+
+    <div class="bottom-nav">
+        <a href="#hero" class="active"><i class="fa-solid fa-shop"></i><span class="ar">المتجر</span><span class="en">Store</span><span class="ur">اسٹور</span></a>
+        <a href="#about"><i class="fa-solid fa-shield-halved"></i><span class="ar">مزايانا</span><span class="en">Features</span><span class="ur">خصوصیات</span></a>
+        <a href="#products"><i class="fa-solid fa-boxes-stacked"></i><span class="ar">المنتجات</span><span class="en">Products</span><span class="ur">مصنوعات</span></a>
+        <a href="#contact"><i class="fa-solid fa-location-dot"></i><span class="ar">الموقع</span><span class="en">Location</span><span class="ur">مقام</span></a>
+    </div>
+
+    <footer>
+        <p>
+            <span class="ar">جميع الحقوق محفوظة © 2026 - مؤسسة وليد سعود الثبيتي للتجارة</span>
+            <span class="en">All Rights Reserved © 2026 - Waleed Saud Al-Thubaiti Trading Est.</span>
+            <span class="ur">جملہ حقوق محفوظ ہیں © 2026 - ولید سعود الثبیتی ٹریڈنگ اسٹیبلشمنٹ</span>
+        </p>
+        <a href="https://wa.me/966547194788" class="designer-badge" style="text-decoration: none;"><span>👑 تم التصميم بواسطة المهندس إسلام الشيخ 👑</span></a>
+    </footer>
+
+    <script>
+        // إخفاء شاشة التحميل
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                document.getElementById('loader').style.opacity = '0';
+                setTimeout(() => { document.getElementById('loader').style.display = 'none'; }, 500);
+            }, 800);
+        });
+
+        // لغة الجهاز التلقائية والتبديل
+        const htmlTag = document.documentElement;
+        const langToggleBtn = document.getElementById('lang-toggle');
+        const langs = ['ar', 'en', 'ur'];
+        
+        let userLang = navigator.language || navigator.userLanguage;
+        let currentLang = 'en';
+        if (userLang.startsWith('ar')) currentLang = 'ar';
+        else if (userLang.startsWith('ur')) currentLang = 'ur';
+        htmlTag.setAttribute('lang', currentLang);
+
+        langToggleBtn.addEventListener('click', () => {
+            let currentIndex = langs.indexOf(htmlTag.getAttribute('lang'));
+            let nextIndex = (currentIndex + 1) % langs.length;
+            htmlTag.setAttribute('lang', langs[nextIndex]);
+        });
+
+        // نظام الوضع الليلي/النهاري التلقائي بحسب إعدادات النظام
+        const themeToggleBtn = document.getElementById('theme-toggle');
+        const themeIcon = themeToggleBtn.querySelector('i');
+        const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)");
+        
+        function setTheme(isDark) {
+            if (isDark) {
+                htmlTag.setAttribute('data-theme', 'dark');
+                themeIcon.classList.replace('fa-moon', 'fa-sun');
+            } else {
+                htmlTag.setAttribute('data-theme', 'light');
+                themeIcon.classList.replace('fa-sun', 'fa-moon');
+            }
+        }
+
+        // تعيين الوضع المبدئي
+        setTheme(prefersDarkScheme.matches);
+
+        // مراقبة تغيير إعدادات الجهاز
+        prefersDarkScheme.addEventListener("change", (e) => {
+            setTheme(e.matches);
+        });
+
+        // التبديل اليدوي للمظهر
+        themeToggleBtn.addEventListener('click', () => {
+            setTheme(htmlTag.getAttribute('data-theme') !== 'dark');
+        });
+
+        // القائمة الجانبية
+        const menuToggle = document.getElementById('menu-toggle');
+        const sidebar = document.getElementById('sidebar');
+        const closeSidebar = document.getElementById('close-sidebar');
+        const overlay = document.getElementById('overlay');
+        const closeLinks = document.querySelectorAll('.close-on-click');
+
+        function toggleMenu() {
+            sidebar.classList.toggle('active');
+            overlay.style.display = sidebar.classList.contains('active') ? 'block' : 'none';
+        }
+
+        menuToggle.addEventListener('click', toggleMenu);
+        closeSidebar.addEventListener('click', toggleMenu);
+        overlay.addEventListener('click', toggleMenu);
+        closeLinks.forEach(link => link.addEventListener('click', toggleMenu));
+
+        // الناف البار السفلي
+        const sections = document.querySelectorAll('section');
+        const navLinks = document.querySelectorAll('.bottom-nav a');
+
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                if (scrollY >= sectionTop - 150) { current = section.getAttribute('id'); }
+            });
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href').includes(current)) { link.classList.add('active'); }
+            });
+        });
+    </script>
+</body>
+</html>
