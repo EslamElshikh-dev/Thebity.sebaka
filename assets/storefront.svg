@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="760" viewBox="0 0 1200 760" role="img" aria-labelledby="title desc">
+  <title id="title">واجهة مؤسسة وليد سعود الثبيتي للتجارة للسباكة والكهرباء</title>
+  <desc id="desc">رسم تعريفي لواجهة متجر مستلزمات سباكة وكهرباء في حي الملقا بالرياض.</desc>
+  <defs>
+    <linearGradient id="wall" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f5efe4"/>
+      <stop offset="1" stop-color="#e4d7c7"/>
+    </linearGradient>
+    <linearGradient id="sign" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#051326"/>
+      <stop offset="0.55" stop-color="#091b35"/>
+      <stop offset="1" stop-color="#0e2a49"/>
+    </linearGradient>
+    <linearGradient id="shop" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset="1" stop-color="#e7eef7"/>
+    </linearGradient>
+    <filter id="glow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="16" stdDeviation="18" flood-color="#061020" flood-opacity="0.22"/>
+    </filter>
+  </defs>
+  <rect width="1200" height="760" rx="42" fill="#f8fafc"/>
+  <g filter="url(#shadow)">
+    <rect x="72" y="70" width="1056" height="618" rx="32" fill="url(#wall)"/>
+    <path d="M72 306h1056v28H72z" fill="#d1c3b1"/>
+    <rect x="114" y="104" width="972" height="198" rx="14" fill="url(#sign)"/>
+    <rect x="138" y="132" width="170" height="34" rx="6" fill="#eaf2ff" opacity="0.96"/>
+    <text x="223" y="156" text-anchor="middle" font-size="26" font-family="Arial, Tahoma, sans-serif" font-weight="700" fill="#cc2446" direction="ltr">0599386259</text>
+    <text x="600" y="166" text-anchor="middle" font-size="48" font-family="Arial, Tahoma, sans-serif" font-weight="800" fill="#ffffff" filter="url(#glow)" direction="rtl">مؤسسة وليد سعود الثبيتي للتجارة</text>
+    <text x="600" y="258" text-anchor="middle" font-size="96" font-family="Arial, Tahoma, sans-serif" font-weight="900" fill="#ffffff" filter="url(#glow)" direction="rtl">السباكة والكهرباء</text>
+    <rect x="156" y="330" width="888" height="312" rx="16" fill="url(#shop)" stroke="#c9d5e2" stroke-width="4"/>
+    <rect x="190" y="368" width="238" height="238" rx="18" fill="#fefefe" stroke="#d3dee9"/>
+    <rect x="480" y="368" width="240" height="238" rx="18" fill="#fefefe" stroke="#d3dee9"/>
+    <rect x="772" y="368" width="238" height="238" rx="18" fill="#fefefe" stroke="#d3dee9"/>
+    <g fill="none" stroke-linecap="round" stroke-width="18">
+      <path d="M230 410c70 20 70 76 0 96" stroke="#1886d9"/>
+      <path d="M270 410c70 20 70 76 0 96" stroke="#18a37a"/>
+      <path d="M310 410c70 20 70 76 0 96" stroke="#f59e0b"/>
+    </g>
+    <g fill="#1f6feb">
+      <rect x="515" y="410" width="160" height="38" rx="10"/>
+      <rect x="515" y="468" width="160" height="38" rx="10" opacity="0.84"/>
+      <rect x="515" y="526" width="160" height="38" rx="10" opacity="0.7"/>
+    </g>
+    <g fill="none" stroke="#0f172a" stroke-width="18" stroke-linecap="round">
+      <path d="M830 416h88M830 466h128M830 516h78M830 566h118"/>
+      <circle cx="960" cy="418" r="22" stroke="#64748b"/>
+      <circle cx="956" cy="518" r="22" stroke="#64748b"/>
+    </g>
+    <circle cx="250" cy="330" r="22" fill="#fff" stroke="#d8e2eb"/>
+    <circle cx="600" cy="330" r="22" fill="#fff" stroke="#d8e2eb"/>
+    <circle cx="950" cy="330" r="22" fill="#fff" stroke="#d8e2eb"/>
+  </g>
+</svg>
