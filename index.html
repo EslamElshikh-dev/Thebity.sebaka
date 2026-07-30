@@ -73,7 +73,9 @@
       {"@type": "Offer", "itemOffered": {"@type": "Product", "name": "مستلزمات السباكة"}},
       {"@type": "Offer", "itemOffered": {"@type": "Product", "name": "مستلزمات الكهرباء"}},
       {"@type": "Offer", "itemOffered": {"@type": "Product", "name": "مواد البناء والتشطيبات"}},
-      {"@type": "Offer", "itemOffered": {"@type": "Product", "name": "الأدوات الصحية والسخانات"}}
+      {"@type": "Offer", "itemOffered": {"@type": "Product", "name": "الأدوات الصحية والسخانات"}},
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "صيانة السباكة", "serviceType": "صيانة وإصلاح أعطال السباكة", "areaServed": {"@type": "City", "name": "الرياض"}}},
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "صيانة الكهرباء", "serviceType": "صيانة وإصلاح الأعطال الكهربائية", "areaServed": {"@type": "City", "name": "الرياض"}}}
     ]
   }
   </script>
@@ -168,7 +170,9 @@
     .contact-panel{background:#fff;border:1px solid var(--border);border-radius:28px;box-shadow:var(--shadow);padding:26px}
     .contact-panel h2{font-size:1.7rem;font-weight:900;margin-bottom:12px;color:#0f172a}.contact-panel p{color:#64748b;font-weight:800;margin-bottom:16px}
     .contact-list{display:grid;gap:12px;margin:18px 0}.contact-list a,.contact-list div{display:flex;align-items:center;gap:12px;background:#f8fafc;border:1px solid var(--border);border-radius:18px;padding:14px;font-weight:900}.contact-list i{width:38px;height:38px;border-radius:14px;background:rgba(15,118,110,.10);color:var(--primary);display:grid;place-items:center;flex:0 0 auto}
-    .map-card{background:#fff;border:1px solid var(--border);border-radius:28px;box-shadow:var(--shadow);padding:10px;overflow:hidden}.map-card iframe{width:100%;height:100%;min-height:440px;border:0;border-radius:21px;display:block}
+    .map-card{position:relative;background:#fff;border:1px solid var(--border);border-radius:28px;box-shadow:var(--shadow);padding:10px;overflow:hidden}.map-card iframe{width:100%;height:100%;min-height:440px;border:0;border-radius:21px;display:block}
+    .service-area-badge{position:absolute;z-index:2;top:24px;right:24px;display:flex;align-items:center;gap:11px;max-width:310px;padding:13px 15px;border:1px solid rgba(15,118,110,.20);border-radius:18px;background:rgba(255,255,255,.96);box-shadow:0 16px 38px rgba(2,8,23,.18);backdrop-filter:blur(10px)}
+    .service-area-badge i{width:42px;height:42px;display:grid;place-items:center;flex:0 0 auto;border-radius:14px;background:rgba(15,118,110,.10);color:var(--primary);font-size:1.2rem}.service-area-badge strong,.service-area-badge span{display:block}.service-area-badge strong{font-size:.9rem;font-weight:900;color:#0f172a}.service-area-badge span{font-size:.78rem;font-weight:800;color:#64748b}
 
     .verification{background:#0f172a;color:#fff}.verification .section-head h2{color:#fff}.verification .section-head p{color:#cbd5e1}.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}.step{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:24px;padding:22px}.step span{width:42px;height:42px;border-radius:50%;display:grid;place-items:center;background:#fff;color:var(--primary);font-weight:900;margin-bottom:12px}.step h3{font-size:1rem;font-weight:900;margin-bottom:8px}.step p{color:#cbd5e1;font-weight:700;font-size:.9rem}
 
@@ -180,7 +184,7 @@
     .mobile-nav{display:none;position:fixed;bottom:0;left:0;right:0;z-index:1001;background:rgba(255,255,255,.96);backdrop-filter:blur(16px);border-top:1px solid var(--border);padding:8px 6px}.mobile-nav a{flex:1;display:flex;flex-direction:column;align-items:center;gap:2px;color:#64748b;font-size:.72rem;font-weight:900}.mobile-nav i{font-size:1.12rem}.mobile-nav a.active,.mobile-nav a:hover{color:var(--primary)}
 
     @media(max-width:980px){.nav-links,.nav-cta{display:none}.menu-btn{display:grid;place-items:center}.nav.open .nav-links{display:flex;position:absolute;top:76px;right:16px;left:16px;background:#fff;border:1px solid var(--border);border-radius:20px;box-shadow:var(--shadow);padding:14px;flex-direction:column;align-items:stretch}.hero-grid,.official-card,.contact-wrap{grid-template-columns:1fr}.cards-grid,.steps{grid-template-columns:repeat(2,1fr)}.products-grid,.faq-grid{grid-template-columns:repeat(2,1fr)}.brand strong{max-width:330px}.media-card img{aspect-ratio:16/10}.map-card iframe{height:380px}}
-    @media(max-width:680px){.topbar .inner{justify-content:center;text-align:center}.nav{height:68px}.brand-icon{width:44px;height:44px}.brand strong{font-size:.86rem;max-width:230px}.brand span{font-size:.72rem}.hero{padding:44px 0 32px}.hero-actions .btn{width:100%}.trust-row,.data-grid,.cards-grid,.products-grid,.steps,.faq-grid,.footer-grid{grid-template-columns:1fr}.official-card{padding:18px}.media-badge{position:static;margin-top:12px;max-width:100%}.section{padding:58px 0}.floating-actions{left:12px;bottom:84px}.float-btn{width:50px;height:50px;border-radius:16px;font-size:1.4rem}.mobile-nav{display:flex}.footer{padding-bottom:110px}.contact-panel{padding:20px}}
+    @media(max-width:680px){.topbar .inner{justify-content:center;text-align:center}.nav{height:68px}.brand-icon{width:44px;height:44px}.brand strong{font-size:.86rem;max-width:230px}.brand span{font-size:.72rem}.hero{padding:44px 0 32px}.hero-actions .btn{width:100%}.trust-row,.data-grid,.cards-grid,.products-grid,.steps,.faq-grid,.footer-grid{grid-template-columns:1fr}.official-card{padding:18px}.media-badge{position:static;margin-top:12px;max-width:100%}.section{padding:58px 0}.floating-actions{left:12px;bottom:84px}.float-btn{width:50px;height:50px;border-radius:16px;font-size:1.4rem}.mobile-nav{display:flex}.footer{padding-bottom:110px}.contact-panel{padding:20px}.service-area-badge{top:20px;right:20px;left:20px;max-width:none}}
   </style>
 </head>
 <body>
@@ -290,9 +294,9 @@
     <section class="section products" id="products">
       <div class="container">
         <div class="section-head">
-          <span class="eyebrow"><i class="fa-solid fa-layer-group"></i> أقسام المتجر</span>
-          <h2>أقسام المنتجات المتوفرة في مؤسسة وليد سعود الثبيتي للتجارة</h2>
-          <p>أقسام واضحة تعكس طبيعة النشاط التجاري الفعلي: مستلزمات السباكة والكهرباء ومواد البناء والتشطيبات.</p>
+          <span class="eyebrow"><i class="fa-solid fa-layer-group"></i> أقسام المتجر والخدمات</span>
+          <h2>المنتجات وخدمات الصيانة المتوفرة لدى مؤسسة وليد سعود الثبيتي للتجارة</h2>
+          <p>مستلزمات سباكة وكهرباء ومواد بناء وتشطيبات، مع خدمات صيانة سباكة وصيانة كهرباء داخل نطاق مدينة الرياض.</p>
         </div>
         <div class="products-grid">
           <article class="product-card"><div class="icon-box"><i class="fa-solid fa-faucet-drip"></i></div><h3>مستلزمات السباكة</h3><p>مواسير، وصلات، محابس، خلاطات، شطافات، لوازم تمديدات المياه والصرف، وقطع صيانة السباكة.</p><a class="btn btn-outline" href="https://wa.me/966599386259?text=أود الاستفسار عن مستلزمات السباكة" target="_blank" rel="noopener">استفسر عبر واتساب</a></article>
@@ -301,6 +305,8 @@
           <article class="product-card"><div class="icon-box"><i class="fa-solid fa-bath"></i></div><h3>الأدوات الصحية</h3><p>خلاطات مياه، شطافات، إكسسوارات حمامات، سخانات، ولوازم تركيب وصيانة الأدوات الصحية.</p><a class="btn btn-outline" href="https://wa.me/966599386259?text=أود الاستفسار عن الأدوات الصحية" target="_blank" rel="noopener">استفسر عبر واتساب</a></article>
           <article class="product-card"><div class="icon-box"><i class="fa-solid fa-hammer"></i></div><h3>عدد وأدوات</h3><p>عدد يدوية وكهربائية، مفكات، أدوات قياس، ولوازم الفنيين والمقاولين لأعمال التركيب والصيانة.</p><a class="btn btn-outline" href="https://wa.me/966599386259?text=أود الاستفسار عن العدد والأدوات" target="_blank" rel="noopener">استفسر عبر واتساب</a></article>
           <article class="product-card"><div class="icon-box"><i class="fa-solid fa-fire-flame-simple"></i></div><h3>سخانات ومضخات وملحقات</h3><p>سخانات مياه، مضخات، خراطيم، وصلات وملحقات متنوعة لاستخدامات المنازل وأعمال الصيانة.</p><a class="btn btn-outline" href="https://wa.me/966599386259?text=أود الاستفسار عن السخانات والمضخات" target="_blank" rel="noopener">استفسر عبر واتساب</a></article>
+          <article class="product-card"><div class="icon-box"><i class="fa-solid fa-screwdriver-wrench"></i></div><h3>صيانة السباكة</h3><p>صيانة وإصلاح تسربات المياه، الخلاطات والمحابس، انسدادات الصرف، وتمديدات السباكة المنزلية داخل مدينة الرياض.</p><a class="btn btn-outline" href="https://wa.me/966599386259?text=أود طلب خدمة صيانة السباكة" target="_blank" rel="noopener">اطلب الخدمة عبر واتساب</a></article>
+          <article class="product-card"><div class="icon-box"><i class="fa-solid fa-plug-circle-bolt"></i></div><h3>صيانة الكهرباء</h3><p>فحص وإصلاح الأعطال الكهربائية، الأفياش والمفاتيح والإنارة والقواطع، وخدمات الصيانة المنزلية داخل مدينة الرياض.</p><a class="btn btn-outline" href="https://wa.me/966599386259?text=أود طلب خدمة صيانة الكهرباء" target="_blank" rel="noopener">اطلب الخدمة عبر واتساب</a></article>
         </div>
       </div>
     </section>
@@ -329,6 +335,7 @@
             </div>
           </div>
           <div class="map-card">
+            <div class="service-area-badge"><i class="fa-solid fa-map-location-dot"></i><div><strong>محل فعلي + نطاق خدمة</strong><span>نخدم جميع أحياء مدينة الرياض</span></div></div>
             <iframe title="خريطة موقع مؤسسة وليد سعود الثبيتي للتجارة للسباكة والكهرباء" src="https://www.google.com/maps?q=2637%20%D8%B4%D8%A7%D8%B1%D8%B9%20%D8%A7%D9%84%D8%AF%D9%87%D9%86%D8%A7%D8%A1%20%D8%AD%D9%8A%20%D8%A7%D9%84%D9%85%D9%84%D9%82%D8%A7%20%D8%A7%D9%84%D8%B1%D9%8A%D8%A7%D8%B6%2013524&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
           </div>
         </div>
